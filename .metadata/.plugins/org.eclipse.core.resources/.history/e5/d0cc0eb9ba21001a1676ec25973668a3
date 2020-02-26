@@ -1,0 +1,23 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><%@taglib
+	uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%><%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<jsp:scriptlet>
+	request.setCharacterEncoding("UTF-8");
+	String x = request.getParameter("name4");
+	out.println(x);
+	Object x1 = request.getAttribute("dane");
+	//out.println(x1.toString());
+	</jsp:scriptlet>
+	<HR>
+	$(dane)
+	<c:set var="x" value="dassda"></c:set>
+	<c:out value ="Mateusz"></c:out>
+</body>
+</html>
