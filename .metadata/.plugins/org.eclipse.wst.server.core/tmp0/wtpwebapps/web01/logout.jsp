@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="java.time.LocalDateTime"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -6,8 +8,21 @@
 <title>Logout</title>
 </head>
 <body>
-<% session.invalidate(); %>
-<p>You have been successfully logout</p>
+<% Object uname = session.getAttribute("uname");
+session.invalidate();
+try {
+	Class.forName("org.h2.Driver");
+    Connection con = DriverManager.getConnection("jdbc:h2:~/test","sa","");
+    Statement stmt = con.createStatement();
+    LocalDateTime localDateTime = LocalDateTime.now().withNano(0);
+    stmt.executeUpdate("update user_reg set date_last_logout='"+ localDateTime +"' where uname='"+uname+"'");
+}
+catch(SQLException e) {
+    out.println("SQLException caught: " +e.getMessage());
+  }
+%>
+<p>You have been successfully logout </p><% out.print(uname); %>
+<br>
 <a href="http://localhost:8080/web01/home.jsp"> Home</a>
 </body>
 </html>

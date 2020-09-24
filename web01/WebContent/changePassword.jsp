@@ -6,12 +6,13 @@
 <title>Login</title>
 </head>
 <body>
-  <h1>Logowanie</h1>
-  <form action="UserProfile" method="post">
+  <h1>Zmiana hasla</h1>
+  <form action="UserProfileChangePassword" method="post">
     <pre>
 Login: <input type="text" name="username">
-Hasło: <input type="password" name="userpass">
-    <input type="submit" value="Login">
+Stare Hasło: <input type="password" name="useroldpass">
+Nowe Hasło <input type="password" name="usernewpass">    
+    <input type="submit" value="Zmień Hasło">
     
 </pre>
   </form>

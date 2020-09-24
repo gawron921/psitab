@@ -6,9 +6,10 @@
 <title>Home</title>
 </head>
 <body>
-<h1>Logowanie z użyciem jsp, servlet, jdbc</h1>
+<h1>Logowanie</h1>
 <a href="http://localhost:8080/web01/home.jsp"> Home</a>
 <a href="http://localhost:8080/web01/login.jsp"> Login</a>
+<!-- <a href="http://localhost:8080/web01/changePassword.jsp"> Change Password</a> -->
 <a href="http://localhost:8080/web01/logout.jsp"> Logout</a>
 </body>
 </html>
